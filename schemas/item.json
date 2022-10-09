@@ -1,0 +1,105 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://notenoughupdates.org/schemas/item.json",
+	"description": "A Hypixel Skyblock item",
+	"type": "object",
+	"properties": {
+		"itemid": {
+			"type": "string",
+			"description": "The minecraft item id of the item."
+		},
+		"displayname": {
+			"type": "string",
+			"description": "The display name of the item."
+		},
+		"nbttag": {
+			"type": "string",
+			"description": "The NBT tag of the item, in SNBT."
+		},
+		"damage": {
+			"type": "integer",
+			"description": "The damage of the item."
+		},
+		"lore": {
+			"type": "array",
+			"description": "The lore of the item.",
+			"items": {
+				"type": "string"
+			}
+		},
+		"recipe": {
+			"type": "object",
+			"description": "The recipe of the item.",
+			"properties": {
+				"A1": {
+					"type": "string",
+					"description": "The item id of the item in the top left slot of the crafting grid."
+				},
+				"A2": {
+					"type": "string",
+					"description": "The item id of the item in the top middle slot of the crafting grid."
+				},
+				"A3": {
+					"type": "string",
+					"description": "The item id of the item in the top right slot of the crafting grid."
+				},
+				"B1": {
+					"type": "string",
+					"description": "The item id of the item in the middle left slot of the crafting grid."
+				},
+				"B2": {
+					"type": "string",
+					"description": "The item id of the item in the middle middle slot of the crafting grid."
+				},
+				"B3": {
+					"type": "string",
+					"description": "The item id of the item in the middle right slot of the crafting grid."
+				},
+				"C1": {
+					"type": "string",
+					"description": "The item id of the item in the bottom left slot of the crafting grid."
+				},
+				"C2": {
+					"type": "string",
+					"description": "The item id of the item in the bottom middle slot of the crafting grid."
+				},
+				"C3": {
+					"type": "string",
+					"description": "The item id of the item in the bottom right slot of the crafting grid."
+				}
+			}
+		},
+		"internalname": {
+			"type": "string",
+			"description": "The item's Hypixel Skyblock id."
+		},
+		"clickcommand": {
+			"enum": ["viewrecipe", "viewpotion"],
+			"description": "The command that is executed when the item is clicked in the item list."
+		},
+		"modver": {
+			"type": "string",
+			"description": "The version of the mod last used to edit this item."
+		},
+		"useneucraft": {
+			"type": "boolean",
+			"description": "Whether or not to "
+		},
+		"infoType": {
+			"enum": ["WIKI_URL", ""],
+			"description": "The type of information in the 'info' field."
+		},
+		"info": {
+			"type": "array",
+			"description": "The information about the item.",
+			"items": {
+				"type": "string"
+			}
+		},
+		"crafttext": {
+			"type": "string",
+			"description": "The text display when viewing a recipe that the user doesn't have the requirements for."
+		}
+	},
+	"required": ["itemid", "displayname", "nbttag", "damage", "lore"]
+}
